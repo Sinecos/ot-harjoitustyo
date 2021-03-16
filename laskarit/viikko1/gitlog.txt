@@ -1,0 +1,105 @@
+C:\Users\milah\Documents\opiskelu\ot_viikko1\tiedostoja (master)               
+λ git log --stat | cat                                                         
+commit fbcb0d3589d4cdd9989e1f7bdf93a1b389653a06                                
+Author: Theal Altake <theal.altake@helsinki.fi>                                
+Date:   Tue Mar 16 20:20:25 2021 +0200                                         
+                                                                               
+    update                                                                     
+                                                                               
+ tiedostoja/file22 | 0                                                         
+ tiedostoja/file3  | 1 +                                                       
+ 2 files changed, 1 insertion(+)                                               
+                                                                               
+commit 036d71139a7d1b107fefe5865d83fed6f2fc6bf3                                
+Author: Theal Altake <theal.altake@helsinki.fi>                                
+Date:   Tue Mar 16 20:01:15 2021 +0200                                         
+                                                                               
+    kahden tiedoston muutos                                                    
+                                                                               
+ eka.txt    | 3 ++-                                                            
+ kolmas.txt | 3 ++-                                                            
+ 2 files changed, 4 insertions(+), 2 deletions(-)                              
+                                                                               
+commit 345d6f38805728c1289d2b4b0d61f25ec8de3fed                                
+Author: Theal Altake <theal.altake@helsinki.fi>                                
+Date:   Tue Mar 16 19:58:09 2021 +0200                                         
+                                                                               
+    file rename                                                                
+                                                                               
+ tiedosto.txt => eka.txt | 0                                                   
+ 1 file changed, 0 insertions(+), 0 deletions(-)                               
+                                                                               
+commit baed694e8367169b66ad351ede1fb285564b8ba4                                
+Author: Theal Altake <theal.altake@helsinki.fi>                                
+Date:   Tue Mar 16 19:54:27 2021 +0200                                         
+                                                                               
+    poistettiin toinen.txt                                                     
+                                                                               
+ toinen.txt | 1 -                                                              
+ 1 file changed, 1 deletion(-)                                                 
+                                                                               
+commit bb8a106df2314e7539ad802e9d7e1fc0c337d9d1                                
+Author: Theal Altake <theal.altake@helsinki.fi>                                
+Date:   Tue Mar 16 19:04:16 2021 +0200                                         
+                                                                               
+    muokattiin tiedosto.txt                                                    
+                                                                               
+ tiedosto.txt | 9 +++++++--                                                    
+ 1 file changed, 7 insertions(+), 2 deletions(-)                               
+                                                                               
+commit 86ee6e77f98667929eb9489e58d0d5ba11a28c09                                
+Author: Theal Altake <theal.altake@helsinki.fi>                                
+Date:   Tue Mar 16 19:03:06 2021 +0200                                         
+                                                                               
+    lisattiin tekstia tiedosto.txt                                             
+                                                                               
+ tiedosto.txt | 4 ++++                                                         
+ 1 file changed, 4 insertions(+)                                               
+                                                                               
+commit 0de850e514bfcf64da4b7479473bd2f0973f0d49                                
+Author: Theal Altake <theal.altake@helsinki.fi>                                
+Date:   Tue Mar 16 18:58:17 2021 +0200                                         
+                                                                               
+    uusi hakemisto, uusi tiedosto                                              
+                                                                               
+ stuff/jotain.txt | 0                                                          
+ 1 file changed, 0 insertions(+), 0 deletions(-)                               
+                                                                               
+commit 46c0723a8e04d61283a693b63fb2cdb0b4a211a1                                
+Author: Theal Altake <theal.altake@helsinki.fi>                                
+Date:   Tue Mar 16 18:57:15 2021 +0200                                         
+                                                                               
+    toinen ja kolmas muokattu                                                  
+                                                                               
+ kolmas.txt | 1 +                                                              
+ toinen.txt | 1 +                                                              
+ 2 files changed, 2 insertions(+)                                              
+                                                                               
+commit b7a11f433f41ce9fa32468abdbd5d68300f866f5                                
+Author: Theal Altake <theal.altake@helsinki.fi>                                
+Date:   Tue Mar 16 18:55:34 2021 +0200                                         
+                                                                               
+    kolmas.txt lisatty                                                         
+                                                                               
+ kolmas.txt | 0                                                                
+ 1 file changed, 0 insertions(+), 0 deletions(-)                               
+                                                                               
+commit 5ed84229a617eb9fb804e335a08f44a93a350e52                                
+Author: Theal Altake <theal.altake@helsinki.fi>                                
+Date:   Tue Mar 16 18:51:59 2021 +0200                                         
+                                                                               
+    muutos ja lisays                                                           
+                                                                               
+ tiedosto.txt | 1 +                                                            
+ toinen.txt   | 0                                                              
+ 2 files changed, 1 insertion(+)                                               
+                                                                               
+commit d4d517b595dcea9950e7d4ef24cf9e81ffcd4cf2                                
+Author: Theal Altake <theal.altake@helsinki.fi>                                
+Date:   Tue Mar 16 18:48:29 2021 +0200                                         
+                                                                               
+    tiedosto.txt luoto                                                         
+                                                                               
+ tiedosto.txt | 0                                                              
+ 1 file changed, 0 insertions(+), 0 deletions(-)                               
+                                                                               
