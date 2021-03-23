@@ -8,4 +8,6 @@
 
 [komentorivi.txt](https://github.com/Sinecos/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-muutos
+**Viikko 2**
+
+[Junit Raportti](https://github.com/Sinecos/ot-harjoitustyo/blob/master/laskarit/viikko2/viikko2_raportti.png)
