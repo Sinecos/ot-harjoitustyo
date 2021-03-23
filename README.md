@@ -10,4 +10,6 @@
 
 **Viikko 2**
 
+[Vaatimusmäärittely]()
+
 [Junit Raportti](https://github.com/Sinecos/ot-harjoitustyo/blob/master/laskarit/viikko2/viikko2_raportti.png)
