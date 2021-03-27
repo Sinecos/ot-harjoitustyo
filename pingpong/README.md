@@ -1,6 +1,10 @@
 # PINGPONG
 
+Sovellus on klassinen Pong peli, jossa pelaaja voi pelata tietokonetta tai toista pelaajaa vastaan. Pelaaja ohjaa suorakaiteista muotoista mailaa, jossa kimmotellaan palloa. Peli päättyy kuin pallo päättyy vasempaan tai oikeaan laitaan.
+
 
 ## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/vaatimusmaarittely.md)
+
+[Työaikakirjanpito](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/tuntikirjanpito.md)
