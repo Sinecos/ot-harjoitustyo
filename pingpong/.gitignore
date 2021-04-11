@@ -9,5 +9,5 @@ target
 .vscode/
 nbactions.xml
 pingpong.jar
-pingpong.iml
+.iml
 .idea/
