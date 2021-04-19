@@ -28,3 +28,7 @@ Toiminnallisista kokonaisuuksista vastaa luokka GameLogic. Entity, Vector2 ovat 
 Entity luokka kuvaa pelaajan ja enemy:n paddle ominaisuuksia. Vector2 on luokka mihin tallenetaan ainoastaan kaksi float arvoa:
 
 <img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kuvat/uml_2.png" width="400">
+
+GameLogic ja ohjelman muiden osien suhdetta kuvaava pakkauskaavio:
+
+<img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kuvat/uml_3.png" width="450">
