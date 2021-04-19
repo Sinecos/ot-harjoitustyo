@@ -13,7 +13,7 @@ Pelin käyttöliittymässä sisältää kolmea erillaista näkymää
 - Kaksi eri peli modeja
 - TopScore
 
-pongapp.ui.PongUi sisältyy ohjelmallisesti alku menu ja pelin varsinainen update ja grafiikan piirtäminen sekä topscore koodi. Näihin kaikkeihin luodaan omat scene-oliot.
+pongapp.ui.PongUi sisältyy ohjelmallisesti alku menu, pelin varsinainen update, grafiikan piirtäminen sekä topscore koodit. Näihin kaikkeihin luodaan omat scene-oliot.
 
 Käyttöliittymä on pyritty eristämään sovelluslokiigasta. pongapp.ui.PongUi:ssa kutsutaan ainoasti sovelluslogiikan GameLogic metodeja jotka toteuttaa pelin pelattavuuden.
 
