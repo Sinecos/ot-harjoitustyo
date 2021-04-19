@@ -3,9 +3,11 @@ package pongapp.domain;
 public class GameLogic {
 
     public int player1Score;
+    public int player2Score;
 
-    public GameLogic(int playerScore) {
+    public GameLogic(int playerScore, int player2Score) {
         player1Score = playerScore;
+        this.player2Score = player2Score;
     }
 
     public Vector2 ballNewPosition(Entity ball) {

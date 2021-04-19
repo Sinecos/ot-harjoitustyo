@@ -25,7 +25,7 @@ import static javafx.application.Platform.exit;
 
 public class PongUi extends Application {
 
-    GameLogic gameLogic = new GameLogic(0);
+    GameLogic gameLogic = new GameLogic(0, 0);
 
     private static final int w_Width = 800;
     private static final int w_Height = 600;

@@ -22,7 +22,7 @@ public class GameLogicTest {
         ball = new Entity(new Vector2(0, 0), new Vector2(10, 10), 20, 20);
         player = new Entity(new Vector2(0, 0), new Vector2(5, 5), 20, 100);
         enemy = new Entity(new Vector2(0, 0), new Vector2(120, 10), 20, 100);
-        gl = new GameLogic(0);
+        gl = new GameLogic(0, 0);
     }
 
     @Test
