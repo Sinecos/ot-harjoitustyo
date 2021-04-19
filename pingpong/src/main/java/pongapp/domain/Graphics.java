@@ -6,17 +6,24 @@ import javafx.scene.text.Font;
 
 public class Graphics {
 
-    public void FillRect(GraphicsContext gc, Color color, float posx, float posy, float Width, float Height){
-        gc.setFill(color);
-        gc.fillRect(posx, posy, Width, Height);
+    private GraphicsContext gc;
+
+    public void init(GraphicsContext gc) {
+        this.gc = gc;
     }
 
-    public void FillText(GraphicsContext gc, Color color, String text, float posX, float posY){
+    public void fillRect(Color color, float posx, float posy, float width, float height) {
+        gc.setFill(color);
+        gc.fillRect(posx, posy, width, height);
+    }
+
+    public void fillText(Color color, String text, float posX, float posY) {
+        gc.setFont(Font.font("Tahoma", 30));
         gc.setFill(color);
         gc.fillText(text, posX, posY);
     }
 
-    public void SetFont(GraphicsContext gc, Color color, float size){
+    public void setFont(Color color, float size) {
         gc.setFill(color);
         gc.setFont(Font.font(size));
     }
