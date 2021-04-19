@@ -7,4 +7,6 @@ Sovellus on klassinen Pong peli, jossa pelaaja voi pelata tietokonetta tai toist
 
 [Vaatimusmäärittely](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/vaatimusmaarittely.md)
 
+[Arkkitehtuurikuvaus](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/arkkitehtuuri.md)
+
 [Työaikakirjanpito](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/tuntikirjanpito.md)
