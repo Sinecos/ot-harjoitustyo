@@ -124,13 +124,13 @@ public class PongUi extends Application {
         graph.fillRect(Color.BLACK, 0, 0, w_Width, w_Height);
 
         if(gameState == GameState.GameWithAIStart){
-            if(gameLogic.ballEndTheGame(ball, enemy, player, paddleWidth))
+            if(gameLogic.endTheGame(ball, enemy, player, paddleWidth))
                 gameState = gameState.MainMenu;
 
             //Ball logic
             gameLogic.ballNewPosition(ball);
-            gameLogic.ballBounceFromSides(ball, w_Height);
-            gameLogic.increaseBallSpeedWhileHittingPaddle(ball, enemy, player, paddleHeight, paddleWidth);
+            gameLogic.ballBounce(ball, w_Height);
+            gameLogic.increaseBallSpeed(ball, enemy, player, paddleHeight, paddleWidth);
 
             //Enemy logic
             gameLogic.enemyNewPosition(ball, enemy, w_Width, paddleHeight);
@@ -138,7 +138,7 @@ public class PongUi extends Application {
 
             //Player logic
             gameLogic.limitPlayerPaddle(player,w_Height,paddleHeight);
-            gameLogic.hitPlayerPaddleAndGetScore(ball,player,paddleWidth,paddleHeight);
+            gameLogic.getScore(ball,player,paddleWidth,paddleHeight);
 
             //DrawEntities:
             DrawEntities(ball, enemy, player);
@@ -148,7 +148,7 @@ public class PongUi extends Application {
     private void DrawEntities(Entity ball, Entity enemy, Entity player){
 
         //Draw Ball
-        graph.fillRect(Color.WHITE, ball.getPos().x, ball.getPos().y, ball.getWidth(), ball.getHeightHeight());
+        graph.fillRect(Color.WHITE, ball.getPos().x, ball.getPos().y, ball.getWidth(), ball.getHeight());
 
         // draw player and enemy
         graph.fillRect(Color.WHITE, player.getPos().x, player.getPos().y , paddleWidth, paddleHeight);

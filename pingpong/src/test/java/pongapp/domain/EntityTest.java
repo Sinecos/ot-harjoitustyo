@@ -41,7 +41,7 @@ public class EntityTest {
     public void widthAndHeightCorrect(){
         Entity player1 = new Entity(new Vector2(10f, 10f), new Vector2(1f, 20f), 14, 30);
 
-        if(14 == player1.getWidth() && 30 == player1.getHeightHeight()){
+        if(14 == player1.getWidth() && 30 == player1.getHeight()){
             assertTrue(true);
         }
     }

@@ -17,7 +17,7 @@ public class GameLogic {
         return ball.getPos();
     }
 
-    public Vector2 increaseBallSpeedWhileHittingPaddle(Entity ball, Entity enemy, Entity player, int paddleHeight, int paddleWidth) {
+    public Vector2 increaseBallSpeed(Entity ball, Entity enemy, Entity player, int paddleHeight, int paddleWidth) {
         //increase the ball getSpeed at hitting the paddle
         if (((ball.getPos().x + ball.getWidth() > enemy.getPos().x) && ball.getPos().y >= enemy.getPos().y
                 && ball.getPos().y <= enemy.getPos().y + paddleHeight) ||
@@ -33,7 +33,7 @@ public class GameLogic {
         return ball.getSpeed();
     }
 
-    public boolean ballBounceFromSides(Entity ball, int wHeight) {
+    public boolean ballBounce(Entity ball, int wHeight) {
         //Ball stays always inside canvas
         if (ball.getPos().y > wHeight || ball.getPos().y < 0) {
             ball.getSpeed().y *= -1;
@@ -43,7 +43,7 @@ public class GameLogic {
         return false;
     }
 
-    public boolean ballEndTheGame(Entity ball, Entity enemy, Entity player, int paddleWidth) {
+    public boolean endTheGame(Entity ball, Entity enemy, Entity player, int paddleWidth) {
         if ((ball.getPos().x > enemy.getPos().x + paddleWidth) || (ball.getPos().x < player.getPos().x - paddleWidth)) {
             return true;
         }
@@ -87,7 +87,7 @@ public class GameLogic {
         return player.getPos();
     }
 
-    public boolean hitPlayerPaddleAndGetScore(Entity ball, Entity player, int paddleWidth, int paddleHeight) {
+    public boolean getScore(Entity ball, Entity player, int paddleWidth, int paddleHeight) {
         if (((ball.getPos().x < player.getPos().x + paddleWidth) && ball.getPos().y >=
                 player.getPos().y && ball.getPos().y <= player.getPos().y + paddleHeight)) {
 

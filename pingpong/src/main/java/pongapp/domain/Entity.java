@@ -33,7 +33,7 @@ public class Entity {
         return width;
     }
 
-    public int getHeightHeight() {
+    public int getHeight() {
         return height;
     }
 }

@@ -40,7 +40,7 @@ public class GameLogicTest {
         ball.setPosition(new Vector2(121, 10));
         Vector2 newSpeed = new Vector2(-1.5f,-1.5f);
 
-        assertTrue(gl.increaseBallSpeedWhileHittingPaddle(ball, enemy, player, paddleHeight, paddleWidth).equals(newSpeed));
+        assertTrue(gl.increaseBallSpeed(ball, enemy, player, paddleHeight, paddleWidth).equals(newSpeed));
     }
 
     @Test
@@ -49,31 +49,31 @@ public class GameLogicTest {
         ball.setPosition(new Vector2(5, 5));
         Vector2 newSpeed = new Vector2(1.5f,1.5f);
 
-        assertTrue(gl.increaseBallSpeedWhileHittingPaddle(ball, enemy, player, paddleHeight, paddleWidth).equals(newSpeed));
+        assertTrue(gl.increaseBallSpeed(ball, enemy, player, paddleHeight, paddleWidth).equals(newSpeed));
     }
 
     @Test
     public void ballBounceFromSides() {
         ball.setPosition(new Vector2(100, w_Height + 1));
-        assertTrue(gl.ballBounceFromSides(ball, w_Height));
+        assertTrue(gl.ballBounce(ball, w_Height));
     }
 
     @Test
     public void ballDoesNotBounceFromSides() {
         ball.setPosition(new Vector2(100, w_Height - 10));
-        assertFalse(gl.ballBounceFromSides(ball, w_Height));
+        assertFalse(gl.ballBounce(ball, w_Height));
     }
 
     @Test
     public void ballEndTheGame() {
         ball.setPosition(new Vector2(enemy.getPos().x + paddleWidth + 1, w_Height - 10));
-        assertTrue(gl.ballEndTheGame(ball, enemy, player, paddleWidth));
+        assertTrue(gl.endTheGame(ball, enemy, player, paddleWidth));
     }
 
     @Test
     public void ballDoesNotEndTheGame() {
         ball.setPosition(new Vector2(enemy.getPos().x + paddleWidth - 10, w_Height - 10));
-        assertFalse(gl.ballEndTheGame(ball, enemy, player, paddleWidth));
+        assertFalse(gl.endTheGame(ball, enemy, player, paddleWidth));
     }
 
     @Test
@@ -122,12 +122,12 @@ public class GameLogicTest {
     @Test
     public void hitPlayerPaddleAndGetScoreGetScore() {
         ball.setPosition(new Vector2(player.getPos().x + paddleWidth - 1, player.getPos().y + 1));
-        assertTrue(gl.hitPlayerPaddleAndGetScore(ball, player, paddleWidth, paddleHeight));
+        assertTrue(gl.getScore(ball, player, paddleWidth, paddleHeight));
     }
 
     @Test
     public void notHittedPlayerPaddleAndGetScoreGetScore() {
         ball.setPosition(new Vector2(player.getPos().x + paddleWidth + 1, player.getPos().y + 1));
-        assertFalse(gl.hitPlayerPaddleAndGetScore(ball, player, paddleWidth, paddleHeight));
+        assertFalse(gl.getScore(ball, player, paddleWidth, paddleHeight));
     }
 }
