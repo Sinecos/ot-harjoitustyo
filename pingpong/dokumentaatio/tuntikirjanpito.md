@@ -7,6 +7,7 @@
 | 27.3. | 2    | Alustava määrittelydokumentti. Vaatimusmäärittely tekeminen. |
 | 8.4.  | 6    | käyttöliittymän alustava toteutus |
 | 9.4.  | 4    | testaus |
-| 17.4. | 5    | sovelluslogiikan paivitys |
-| 19.4. | 6    | testauksia ja checkstyle käyttöön ottaminen ja erroreiden korjauksia |
-| 20.4. | 4    | arkkitehtuurikuvaus aloittaminen|
+| 15.4. | 6    | sovelluslogiikan paivitys |
+| 16.4. | 7    | sovelluslogiikan paivitys |
+| 19.4. | 8    | testauksia ja checkstyle käyttöön ottaminen ja erroreiden korjauksia |
+| 20.4. | 7    | arkkitehtuurikuvaus aloittaminen|
