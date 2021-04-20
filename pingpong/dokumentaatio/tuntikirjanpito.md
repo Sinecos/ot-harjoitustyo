@@ -9,5 +9,6 @@
 | 9.4.  | 4    | testaus |
 | 15.4. | 6    | sovelluslogiikan paivitys |
 | 16.4. | 7    | sovelluslogiikan paivitys |
-| 19.4. | 8    | testauksia ja checkstyle käyttöön ottaminen ja erroreiden korjauksia |
-| 20.4. | 7    | arkkitehtuurikuvaus aloittaminen|
+| 18.4. | 7    | testauksia ja checkstyle käyttöön ottaminen ja erroreiden korjauksia |
+| 19.4. | 4    | arkkitehtuurikuvaus aloittaminen|
+| 20.4. | 3    | arkkitehtuurikuvaus aloittaminen|
