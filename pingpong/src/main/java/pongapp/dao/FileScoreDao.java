@@ -7,14 +7,14 @@ import java.io.FileWriter;
 import java.util.*;
 
 
-public class ScoreDao implements PlayerScoreDao {
+public class FileScoreDao implements PlayerScoreDao {
 
     final List<PlayerScore> playerScores;
 
     private String file;
     public boolean allowAddNewScore;
 
-    public ScoreDao(String file) throws Exception {
+    public FileScoreDao(String file) throws Exception {
         playerScores = new ArrayList<>();
         this.file = file;
 

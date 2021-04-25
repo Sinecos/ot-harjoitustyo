@@ -17,7 +17,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import pongapp.dao.ScoreDao;
+import pongapp.dao.FileScoreDao;
 import pongapp.domain.*;
 
 import java.io.*;
@@ -28,7 +28,7 @@ import static javafx.application.Platform.exit;
 public class PongUi extends Application {
 
     GameLogic gameLogic = new GameLogic(0, 0);
-    ScoreDao scoreDao;
+    FileScoreDao scoreDao;
 
     private static final int w_Width = 800;
     private static final int w_Height = 600;
@@ -143,7 +143,7 @@ public class PongUi extends Application {
         try(oFile){
             properties.load(oFile);
             String playerScoreFile = properties.getProperty("playerScoreFile");
-            scoreDao = new ScoreDao(playerScoreFile);
+            scoreDao = new FileScoreDao(playerScoreFile);
         }
         catch (Exception e) {
 

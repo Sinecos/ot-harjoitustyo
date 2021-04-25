@@ -1,10 +1,8 @@
 package pongapp.dao;
 
-import junit.framework.TestCase;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-import org.junit.After;
 import org.junit.Before;
 import pongapp.domain.PlayerScore;
 
@@ -20,7 +18,7 @@ public class ScoreDaoTest {
     public TemporaryFolder testFolder = new TemporaryFolder();
 
     File userFile;
-    ScoreDao dao;
+    FileScoreDao dao;
 
     @Before
     public void setUp() throws Exception {
@@ -32,7 +30,7 @@ public class ScoreDaoTest {
 
         }
 
-        dao = new ScoreDao(userFile.getAbsolutePath());
+        dao = new FileScoreDao(userFile.getAbsolutePath());
     }
 
     @Test
