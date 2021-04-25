@@ -52,8 +52,9 @@ public class FileScoreDao implements PlayerScoreDao {
     @Override
     public List<PlayerScore> getAllPlayers() {
 
-        if(playerScores.size() == 0)
+        if (playerScores.size() == 0) {
             return null;
+        }
 
         Collections.sort(playerScores, Collections.reverseOrder());
         return playerScores;

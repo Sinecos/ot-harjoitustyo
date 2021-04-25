@@ -140,14 +140,9 @@ public class PongUi extends Application {
 
         var oFile  = new FileInputStream(file);
 
-        try(oFile){
-            properties.load(oFile);
-            String playerScoreFile = properties.getProperty("playerScoreFile");
-            scoreDao = new FileScoreDao(playerScoreFile);
-        }
-        catch (Exception e) {
-
-        }
+        properties.load(oFile);
+        String playerScoreFile = properties.getProperty("playerScoreFile");
+        scoreDao = new FileScoreDao(playerScoreFile);
     }
 
     public void mainMenu(GraphicsContext gc, StackPane stackPane){
