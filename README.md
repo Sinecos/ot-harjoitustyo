@@ -1,15 +1,12 @@
-# Ohjelmistotekniikka, harjoitustyo
+# PINGPONG
 
-## Tehtavat
+Sovellus on klassinen Pong peli, jossa pelaaja voi pelata tietokonetta tai toista pelaajaa vastaan. Pelaaja ohjaa suorakaiteista muotoista mailaa, jossa kimmotellaan palloa. Peli päättyy kuin pallo päätyy vasempaan tai oikeaan laitaan.
 
-**Viikko 1**
 
-[gitlog.txt](https://github.com/Sinecos/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](https://github.com/Sinecos/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
-
-**Viikko 2**
+## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/vaatimusmaarittely.md)
 
-[Junit Raportti](https://github.com/Sinecos/ot-harjoitustyo/blob/master/laskarit/viikko2/viikko2_raportti.png)
+[Arkkitehtuurikuvaus](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/arkkitehtuuri.md)
+
+[Työaikakirjanpito](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/tuntikirjanpito.md)
