@@ -12,3 +12,8 @@
 | 18.4. | 7    | testauksia ja checkstyle käyttöön ottaminen ja erroreiden korjauksia |
 | 19.4. | 4    | arkkitehtuurikuvaus aloittaminen|
 | 20.4. | 3    | arkkitehtuurikuvaus aloittaminen|
+| 24.4. | 8    | score table ja file write and load|
+| 24.4. | 3    | testauksia|
+| 25.4. | 4    | score table ja file write and load|
+
+Yhteensä: 65h
