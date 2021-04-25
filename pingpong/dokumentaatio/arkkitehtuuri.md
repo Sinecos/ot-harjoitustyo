@@ -31,4 +31,4 @@ Entity luokka kuvaa pelaajan ja enemy:n paddle ominaisuuksia. Vector2 on luokka 
 
 GameLogic ja ohjelman muiden osien suhdetta kuvaava pakkauskaavio:
 
-<img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kuvat/uml_3.png" width="450">
+<img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kuvat/uml_3.png" width="500">
