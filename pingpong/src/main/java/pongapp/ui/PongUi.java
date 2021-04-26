@@ -115,7 +115,7 @@ public class PongUi extends Application {
                 FileWriter myWriter = new FileWriter(file);
                 myWriter.write("playerScoreFile=playerScore.txt");
                 myWriter.close();
-                System.out.println("Successfully wrote to the file.");
+                System.out.println("Successfully wrote playerScoreFile=playerScore.txt to the file config.properties.");
             } catch (IOException e) {
                 System.out.println("An error occurred.");
                 e.printStackTrace();
@@ -127,7 +127,7 @@ public class PongUi extends Application {
                 FileWriter myWriter = new FileWriter(file2);
                 myWriter.write("Matti;1" + "\n" + "Nuur;6");
                 myWriter.close();
-                System.out.println("Successfully wrote to the file.");
+                System.out.println("Successfully wrote to the file playerScore.txt.");
             } catch (IOException e) {
                 System.out.println("An error occurred.");
                 e.printStackTrace();

@@ -46,6 +46,14 @@ mvn package
 
 jar generoi hakemistoon _target_ ja se suoritetaan jar-tiedoston _pingpong-1.0-SNAPSHOT.jar_
 
+### jar tiedoston käynistys
+
+Tiedosto pingpong-1.0-SNAPSHOT.jar voidaan kaynistää kommennolla
+
+```
+java -jar pingpong-1.0-SNAPSHOT.jar
+```
+
 ### JavaDoc
 
 ### Checkstyle
