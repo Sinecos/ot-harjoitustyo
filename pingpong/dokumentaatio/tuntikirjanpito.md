@@ -15,4 +15,5 @@
 | 24.4. | 8    | score table ja file write and load|
 | 24.4. | 3    | testauksia|
 | 25.4. | 4    | score table ja file write and load|
-| yht   | 65   | | 
+| 26.4. | 5    | arkkitehtuurikuvaus ja Readme päivitys, release tekeminen ja testauksia|
+| yht   | 70   | | 

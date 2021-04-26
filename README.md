@@ -46,7 +46,7 @@ mvn package
 
 jar generoi hakemistoon _target_ ja se suoritetaan jar-tiedoston _pingpong-1.0-SNAPSHOT.jar_
 
-## Jar tiedoston käynnistys
+### Tiedostot jar tiedoston käynnistys
 
 Tiedosto pingpong-1.0-SNAPSHOT.jar voidaan kaynistää kommennolla
 
