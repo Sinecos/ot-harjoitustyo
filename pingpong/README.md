@@ -45,7 +45,7 @@ jar generoi hakemistoon _target_ ja se suoritetaan jar-tiedoston _pingpong-1.0-S
 
 ### Checkstyle
 
-Checkstyle suorittaa seuraavalla komennolla
+Checkstyle voidaan suorittaa seuraavalla komennolla
 
 ```
 mvn jxr:jxr checkstyle:checkstyle
