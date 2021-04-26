@@ -60,7 +60,7 @@
                 <version>0.8.3</version>
                 <configuration>
                     <excludes>
-                        <exclude>pongapp/ui/*</exclude>
+                        <exclude>pongapp/ui/**/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

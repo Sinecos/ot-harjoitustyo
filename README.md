@@ -10,3 +10,45 @@ Sovellus on klassinen Pong peli, jossa pelaaja voi pelata tietokonetta tai toist
 [Arkkitehtuurikuvaus](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/arkkitehtuuri.md)
 
 [Työaikakirjanpito](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/tuntikirjanpito.md)
+
+## Releaset
+
+## Komentorivitoiminnot
+
+### Testaus
+
+Testit voidaan suorittaa seuraavalla kommennolla
+
+```
+mvn test
+```
+
+Testikattavuusraportti voidaan suorittaa seuraavalla kommennolla
+
+```
+mvn test jacoco:report
+```
+
+Kattavuusraportin voi avata selaimella tiedoston _target/site/jacoco/index.html_
+
+### Suoritettavan jarin generointi
+
+Jar file voidaan generoida komennolla
+
+```
+mvn package
+```
+
+jar generoi hakemistoon _target_ ja se suoritetaan jar-tiedoston _pingpong-1.0-SNAPSHOT.jar_
+
+### JavaDoc
+
+### Checkstyle
+
+Checkstyle suorittaa seuraavalla komennolla
+
+```
+mvn jxr:jxr checkstyle:checkstyle
+```
+
+Mahdolliset virhe ilmoitukset voidaan tarkistaa selaimella tiedostoa _target/site/checkstyle.html_
