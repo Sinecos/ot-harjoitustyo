@@ -61,7 +61,7 @@ Missä jokaiseen riviin tallenetaan nimi ja score puolipisteellä erotettuna
 
 ### Päätoiminnallisuudet
 
-Kuvataan seuraavasti sekvenssikaaviona uusi peli
+Kuvataan seuraavasti sekvenssikaaviona uusi peli, päitys ja tiedon tallentaminen
 
 <img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kuvat/uml_4.png" width="750">
 
