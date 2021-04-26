@@ -153,7 +153,7 @@ public class PongUi extends Application {
         t.setFont(new Font(30));
         t.setFill(Color.YELLOW);
 
-        Button newGameButton = new Button("NEW GAME (AI)");
+        Button newGameButton = new Button("NEW GAME (COMPUTER)");
         newGameButton.setFont(font);
         newGameButton.setOnAction(e -> startGame());
 

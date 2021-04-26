@@ -32,3 +32,36 @@ Entity luokka kuvaa pelaajan ja enemy:n paddle ominaisuuksia. Vector2 on luokka 
 GameLogic ja ohjelman muiden osien suhdetta kuvaava pakkauskaavio:
 
 <img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kuvat/uml_3.png" width="500">
+
+## Player Score pysyväistallennus
+
+Pakkauksen pongapp.dao ja luokat FileScoreDao ja PlayerScoreDao huolehtivat siitä, että pelaaja voi tallenttaa generoituun tiedostoon nimi ja ottelun saatu pistemäärä High Score Tableen. 
+
+Luokat noudattavat Data access object mallia.
+
+
+### Tiedostot
+
+Sovellus tallentaa pelaajan nimi ja score erillisiin tiedostoihin ja nämä tiedot tallenetaan playerScore.txt tiedostoon.
+
+konfiguraatiotiedosto config.properties määrittelee playerScore.txt tiedoston nimi
+
+<pre>
+playerScoreFile=playerScore.txt
+</pre>
+
+playerScore.txt voidaan kuvata seuraavalla formaatilla
+
+<pre>
+Matti;1
+Nuur;6
+</pre>
+
+Missä jokaiseen riviin tallenetaan nimi ja score puolipisteellä erotettuna
+
+### Päätoiminnallisuudet
+
+Kuvataan seuraavasti sekvenssikaaviona uusi peli
+
+<img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kuvat/uml_4.png" width="750">
+
