@@ -65,4 +65,4 @@ Kuvataan seuraavasti sekvenssikaaviona uusi peli
 
 <img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kuvat/uml_4.png" width="750">
 
-Kun Pelaaja painaa New Game buttonia, ottelu alkaa. Ottelun aikana PongUi luokka kutsuu GameLogic luokan tarvittavat metodit pelin rakentamiseen ja päivitykseen. Ottelun jälkein pelaaja voi kirjoittaa nimen ja tallenttaa tiedot playerScore tiedostoon joka scoreDao luokka hoitaa. Tämän jälkein pelaaja voi palata takaisin Main Menuun.
+Kun Pelaaja painaa New Game buttonia, PongUi luokka kutsuu startGame metodia ja ottelu alkaa. Ottelun aikana PongUi luokka kutsuu sovelluslogiikan tarvittavat metodit pelin rakentamiseen ja päivitykseen. Ottelun jälkein pelaaja voi kirjoittaa nimen ja tallenttaa tiedot playerScore tiedostoon joka scoreDao create metodi hoitaa. Tämän jälkein pelaaja voi palata takaisin Main Menuun metodilla backToMainMenu.
