@@ -10,6 +10,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -47,10 +49,13 @@ public class PongUi extends Application {
     private Scene gameScene;
     private Scene highScoreScene;
 
-
     private Entity player;
     private Entity enemy;
     private Entity ball;
+
+    //Player2 boolean input
+    boolean p2DownPressed = false;
+    boolean p2UpPressed = false;
 
     private static enum GameState{
         MainMenu,
@@ -103,6 +108,9 @@ public class PongUi extends Application {
         //Set player input as mouse input
         canvas.setOnMouseMoved(e -> player.getPos().y = (float) e.getY());
 
+        gameLogic.horBoostStart = false;
+        gameLogic.horBoostRight = true;
+        gameLogic.horBoostLimit = 4;
     }
 
     public void playerScoreInit() throws Exception{
@@ -153,13 +161,17 @@ public class PongUi extends Application {
         t.setFont(new Font(30));
         t.setFill(Color.YELLOW);
 
-        Button newGameButton = new Button("NEW GAME (COMPUTER)");
+        Button newGameButton = new Button("NEW GAME (Computer)");
         newGameButton.setFont(font);
-        newGameButton.setOnAction(e -> startGame());
+        newGameButton.setOnAction(e -> startGame(false));
+
+        Button newGameP2Button = new Button("NEW GAME (Player2)");
+        newGameP2Button.setFont(font);
+        newGameP2Button.setOnAction(e -> startGame(true));
 
         Button highScoreButton = new Button("HIGH SCORE");
         highScoreButton.setFont(font);
-        highScoreButton.setOnAction(e -> startScoreTable(true));
+        highScoreButton.setOnAction(e -> startScoreTable(true, false, true));
 
         Button exitGameButton = new Button("EXIT GAME");
         exitGameButton.setFont(font);
@@ -168,17 +180,16 @@ public class PongUi extends Application {
            exit();
         });
 
-        VBox box = new VBox(20, t , newGameButton, highScoreButton, exitGameButton);
+        VBox box = new VBox(20, t , newGameButton, newGameP2Button, highScoreButton, exitGameButton);
 
         stackPane.getChildren().addAll(box);
         box.setAlignment(Pos.CENTER);
     }
 
-    protected void startScoreTable(boolean state){
+    protected void startScoreTable(boolean state, boolean twoPlayerMode, boolean winTheGame){
         gameState = GameState.ScoreTable;
-
         stack = new StackPane(canvas);
-        tl = new Timeline(new KeyFrame(Duration.millis(10), e -> scoreTableStart(stack, state)));
+        tl = new Timeline(new KeyFrame(Duration.millis(10), e -> scoreTableStart(stack, state, twoPlayerMode, winTheGame)));
         tl.setCycleCount(Timeline.INDEFINITE);
         highScoreScene = new Scene(stack);
         _stage.setScene(highScoreScene);
@@ -186,9 +197,15 @@ public class PongUi extends Application {
         tl.play();
     }
 
-    protected void startGame(){
+    protected void startGame(boolean playerMode){
         Init();
-        gameState = GameState.GameWithAIStart;
+
+        if (playerMode) {
+            gameState = GameState.GameWithPlayerStart;
+        } else {
+            gameState = GameState.GameWithAIStart;
+        }
+
         stack = new StackPane(canvas);
         tl = new Timeline(new KeyFrame(Duration.millis(10), e -> update(gc)));
         tl.setCycleCount(Timeline.INDEFINITE);
@@ -215,12 +232,24 @@ public class PongUi extends Application {
         mainMenu(gc,stack);
     }
 
-    protected void scoreTableStart(StackPane stackPane, boolean fromMainMenu){
+    protected void scoreTableStart(StackPane stackPane, boolean fromMainMenu, boolean twoPlayerMode, boolean winTheGame){
         gameState = GameState.ScoreTable;
-        graph.fillRect(Color.BLUE, 0, 0,  w_Width, w_Height);
 
+        String finalScore = "Player 1 Wins! Your Score: " + String.valueOf(gameLogic.player1Score);
+
+        if(twoPlayerMode){
+            if(gameLogic.player2Score > gameLogic.player1Score){
+                finalScore = "Player 2 Wins! Your Score: " + String.valueOf(gameLogic.player2Score);
+            }
+        }
+
+        if(!twoPlayerMode && !winTheGame){
+            finalScore = "Player 1 Loses!";
+        }
+
+        graph.fillRect(Color.BLUE, 0, 0,  w_Width, w_Height);
         Text t = new Text(10, 50, "HIGH SCORE TABLE");
-        Text yourScore = new Text(10, 50, "Your Score: " + String.valueOf(gameLogic.player1Score));
+        Text yourScore = new Text(10, 50, finalScore);
         Text playerScores = new Text(12, 50, "");
 
         t.setFont(new Font(20));
@@ -243,7 +272,19 @@ public class PongUi extends Application {
         if(scoreDao.allowAddNewScore) {
             button.setOnAction(e -> {
                 try {
-                    scoreDao.create(new PlayerScore(userdata.getText(), gameLogic.player1Score));
+
+                    if(twoPlayerMode) {
+                        if (gameLogic.player2Score > gameLogic.player1Score) {
+                            scoreDao.create(new PlayerScore(userdata.getText(), gameLogic.player2Score));
+                        }
+                        else{
+                            scoreDao.create(new PlayerScore(userdata.getText(), gameLogic.player1Score));
+                        }
+                    }
+                    else{
+                        scoreDao.create(new PlayerScore(userdata.getText(), gameLogic.player1Score));
+                    }
+
                     scoreDao.allowAddNewScore = false;
 
                 } catch (Exception exception) {
@@ -255,8 +296,15 @@ public class PongUi extends Application {
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(20,20,20,20));
 
-        if(!fromMainMenu)
-            layout.getChildren().addAll(t, yourScore, userdata, button, playerScores, mainMenuButton);
+        if(!fromMainMenu){
+            if(!winTheGame){
+                layout.getChildren().addAll(t,yourScore, playerScores, mainMenuButton);
+            }
+            else{
+                layout.getChildren().addAll(t, yourScore, userdata, button, playerScores, mainMenuButton);
+            }
+
+        }
         else{
             graph.fillRect(Color.BLUE, 0, 0,  w_Width, w_Height);
             layout.getChildren().addAll(t, playerScores, mainMenuButton);
@@ -299,35 +347,85 @@ public class PongUi extends Application {
 
         graph.fillRect(Color.BLACK, 0, 0, w_Width, w_Height);
 
+        //End Game Go to Score Table
+        if(gameLogic.endTheGame(ball, enemy, player, paddleWidth)) {
+
+            if(scoreDao != null)
+                scoreDao.allowAddNewScore = true;
+
+            tl.stop();
+
+            if(gameState == GameState.GameWithAIStart) {
+                if((ball.getPos().x > enemy.getPos().x + paddleWidth)) {
+                    startScoreTable(false, false, true);
+                }
+                else{
+                    startScoreTable(false, false, false);
+                }
+            } else{
+                startScoreTable(false, true, true);
+            }
+            return;
+        }
+
+        //Ball logic
+        gameLogic.ballNewPosition(ball);
+        gameLogic.ballBounce(ball, w_Height);
+        gameLogic.increaseBallSpeed(ball, enemy, player, paddleHeight, paddleWidth);
+
+        //Enemy logic
         if(gameState == GameState.GameWithAIStart){
-            //End Game Go to Score Table
-            if(gameLogic.endTheGame(ball, enemy, player, paddleWidth)) {
+            gameLogic.enemyNewPosition(ball, enemy, w_Width, paddleHeight);
+        }
+        else if(gameState == GameState.GameWithPlayerStart){
 
-                if(scoreDao != null)
-                    scoreDao.allowAddNewScore = true;
+            //Player2 Movement using keyboard:
+            gameScene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> {
+                if(key.getCode()== KeyCode.DOWN) {
+                    p2DownPressed = true;
+                }
+                else if(key.getCode()== KeyCode.UP) {
+                    p2UpPressed = true;
+                }
+            });
 
-                tl.stop();
+            gameScene.addEventHandler(KeyEvent.KEY_RELEASED, (key) -> {
+                if(key.getCode()== KeyCode.DOWN) {
+                    p2DownPressed = false;
+                }
+                else if(key.getCode()== KeyCode.UP) {
+                    p2UpPressed = false;
+                }
+            });
 
-                startScoreTable(false);
-                return;
+            gameLogic.player2NewPosition(enemy, p2DownPressed, p2UpPressed);
+        }
+
+        gameLogic.limitEnemyPaddle(enemy,w_Height,paddleHeight);
+
+        //Player logic
+        gameLogic.limitPlayerPaddle(player,w_Height,paddleHeight);
+
+        if(gameState == GameState.GameWithAIStart){
+            if(gameLogic.player1Score > gameLogic.horBoostLimit){
+                gameLogic.horBoostStart = true;
             }
 
-            //Ball logic
-            gameLogic.ballNewPosition(ball);
-            gameLogic.ballBounce(ball, w_Height);
-            gameLogic.increaseBallSpeed(ball, enemy, player, paddleHeight, paddleWidth);
-
-            //Enemy logic
-            gameLogic.enemyNewPosition(ball, enemy, w_Width, paddleHeight);
-            gameLogic.limitEnemyPaddle(enemy,w_Height,paddleHeight);
-
-            //Player logic
-            gameLogic.limitPlayerPaddle(player,w_Height,paddleHeight);
-            gameLogic.getScore(ball,player,paddleWidth,paddleHeight);
-
-            //DrawEntities:
-            DrawEntities(ball, enemy, player);
+            gameLogic.giveHorizontalBoost(player, enemy, paddleWidth, w_Height, w_Width);
         }
+
+        //Score for player 1 and player 2
+        if(gameLogic.p1HitPaddle(ball,player,paddleWidth,paddleHeight)){
+            gameLogic.player1Score += 1;
+        }
+
+        if(gameLogic.p2HitPaddle(ball, enemy, paddleWidth, paddleHeight)){
+            gameLogic.player2Score += 1;
+        }
+
+        //DrawEntities:
+        DrawEntities(ball, enemy, player);
+
     }
 
     private void DrawEntities(Entity ball, Entity enemy, Entity player){
@@ -340,7 +438,17 @@ public class PongUi extends Application {
         graph.fillRect(Color.WHITE, enemy.getPos().x, enemy.getPos().y, paddleWidth, paddleHeight);
 
         //draw player score
-        graph.fillText(Color.YELLOW, String.valueOf(gameLogic.player1Score), w_Width/ 2, 100);
+        if(gameState == GameState.GameWithAIStart) {
+            graph.fillText(Color.YELLOW, String.valueOf(gameLogic.player1Score), w_Width/ 2, 100);
+        }
+        else if (gameState == GameState.GameWithPlayerStart){
+            graph.fillText(Color.YELLOW, "Player 1", 50, 50);
+            graph.fillText(Color.YELLOW, String.valueOf(gameLogic.player1Score), 100, 100);
+
+            graph.fillText(Color.YELLOW, "Player 2", w_Width - 150, 50);
+            graph.fillText(Color.YELLOW, String.valueOf(gameLogic.player2Score), w_Width - 100, 100);
+        }
+
     }
 
     public void ShowScores(Text playerScores){

@@ -38,7 +38,7 @@ public class GameLogicTest {
     public void increaseBallSpeedWhileHittingPaddleOfEnemy() {
         ball.setSpeed(new Vector2(1,1));
         ball.setPosition(new Vector2(121, 10));
-        Vector2 newSpeed = new Vector2(-1.5f,-1.5f);
+        Vector2 newSpeed = new Vector2(-1.1f,-1.1f);
 
         assertTrue(gl.increaseBallSpeed(ball, enemy, player, paddleHeight, paddleWidth).equals(newSpeed));
     }
@@ -47,7 +47,7 @@ public class GameLogicTest {
     public void increaseBallSpeedWhileHittingPaddleOfPlayer() {
         ball.setSpeed(new Vector2(-1,-1));
         ball.setPosition(new Vector2(5, 5));
-        Vector2 newSpeed = new Vector2(1.5f,1.5f);
+        Vector2 newSpeed = new Vector2(1.1f,1.1f);
 
         assertTrue(gl.increaseBallSpeed(ball, enemy, player, paddleHeight, paddleWidth).equals(newSpeed));
     }
@@ -120,14 +120,62 @@ public class GameLogicTest {
     }
 
     @Test
-    public void hitPlayerPaddleAndGetScoreGetScore() {
-        ball.setPosition(new Vector2(player.getPos().x + paddleWidth - 1, player.getPos().y + 1));
-        assertTrue(gl.getScore(ball, player, paddleWidth, paddleHeight));
+    public void p2NewPosDownPressed(){
+        var testPosY = enemy.getPos().y + 12;
+        assertTrue(gl.player2NewPosition(enemy, true, false).y == testPosY);
     }
 
     @Test
-    public void notHittedPlayerPaddleAndGetScoreGetScore() {
-        ball.setPosition(new Vector2(player.getPos().x + paddleWidth + 1, player.getPos().y + 1));
-        assertFalse(gl.getScore(ball, player, paddleWidth, paddleHeight));
+    public void p2NewPosUpPressed(){
+        var testPosY = enemy.getPos().y - 12;
+        assertTrue(gl.player2NewPosition(enemy, false, true).y == testPosY);
     }
+
+
+    @Test
+    public void hitPlayerPaddle() {
+        ball.setPosition(new Vector2(player.getPos().x + paddleWidth - 1, player.getPos().y + 1));
+        assertTrue(gl.p1HitPaddle(ball, player, paddleWidth, paddleHeight));
+    }
+
+    @Test
+    public void notHitPlayerPaddle() {
+        ball.setPosition(new Vector2(player.getPos().x + paddleWidth + 1, player.getPos().y + 1));
+        assertFalse(gl.p1HitPaddle(ball, player, paddleWidth, paddleHeight));
+    }
+
+    @Test
+    public void hitPlayer2PaddleAndGetScore() {
+        ball.setPosition(new Vector2(enemy.getPos().x + (ball.getPos().x - ball.getWidth()), enemy.getPos().y + paddleHeight));
+        assertTrue(gl.p2HitPaddle(ball, enemy, paddleWidth, paddleHeight));
+    }
+
+    @Test
+    public void notHitPlayer2PaddleAndGetScore() {
+        ball.setPosition(new Vector2(enemy.getPos().x + (ball.getPos().x - ball.getWidth()), enemy.getPos().y - paddleHeight));
+        assertFalse(gl.p2HitPaddle(ball, enemy, paddleWidth, paddleHeight));
+    }
+
+    @Test
+    public void horBoostMoveToRight(){
+        gl.horBoostStart = true;
+        gl.horBoostRight = true;
+        var newPlayerPost = player.getPos().x + 0.4f;
+        gl.giveHorizontalBoost(player, enemy, paddleWidth, w_Height, w_Width);
+
+        assertTrue(player.getPos().x == newPlayerPost);
+
+    }
+
+    @Test
+    public void horBoostMoveToLeft(){
+        gl.horBoostStart = true;
+        gl.horBoostRight = false;
+        var newPlayerPost = player.getPos().x;
+        gl.giveHorizontalBoost(player, enemy, paddleWidth, w_Height, w_Width);
+
+        assertTrue(player.getPos().x > newPlayerPost);
+
+    }
+
 }

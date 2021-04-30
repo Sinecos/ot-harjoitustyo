@@ -9,11 +9,22 @@ import java.util.*;
 
 public class FileScoreDao implements PlayerScoreDao {
 
+    /**
+     * Lista johon kerataan pelaajan nimi ja scoret
+     *
+     * */
     final List<PlayerScore> playerScores;
 
     private String file;
     public boolean allowAddNewScore;
 
+    /**
+     * Metodi jota kaytetaan kun halutaan ladata playerScore.txt tiedot suoraan playerScores listaan.
+     *
+     * @param file tiedoston path
+     *
+     * @throws Exception if file is empty
+     * */
     public FileScoreDao(String file) throws Exception {
         playerScores = new ArrayList<>();
         this.file = file;
@@ -34,6 +45,9 @@ public class FileScoreDao implements PlayerScoreDao {
         }
     }
 
+    /**
+     * Metodi joka tallentaa playerScore.txt tiedostoon kaikki listan playerScores alkiot
+     * */
     private void saveData() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (PlayerScore player : playerScores) {
@@ -42,6 +56,11 @@ public class FileScoreDao implements PlayerScoreDao {
         }
     }
 
+    /**
+     * Metodi jolla luodaan uusi playerScore alkion ja tallenetaan playerScores listaan
+     *
+     * @return palauttaa PlayerScore alkion
+     * */
     @Override
     public PlayerScore create(PlayerScore playerScore) throws Exception {
         playerScores.add(playerScore);
@@ -49,6 +68,11 @@ public class FileScoreDao implements PlayerScoreDao {
         return playerScore;
     }
 
+    /**
+     * Metodi jolla voidaan hakea kaikki pelaajat playerScores listasta
+     *
+     * @return palauttaa PlayerScores listan
+     * */
     @Override
     public List<PlayerScore> getAllPlayers() {
 
@@ -60,6 +84,9 @@ public class FileScoreDao implements PlayerScoreDao {
         return playerScores;
     }
 
+    /**
+     * Metodi jolla jarjestetaan nimet ja scoret suuremmasta pienempaan
+     * */
     public void sortScores() {
         Collections.sort(playerScores, Collections.reverseOrder());
     }

@@ -3,10 +3,12 @@
 Sovellus on klassinen Pong peli, jossa pelaaja voi pelata tietokonetta tai toista pelaajaa vastaan. Pelaaja ohjaa suorakaiteista muotoista mailaa, jossa kimmotellaan palloa. Peli päättyy kuin pallo päätyy vasempaan tai oikeaan laitaan.
 
 ## Javan versiosta
+
 Tämä sovellus toimii ainoastaan Java versio 11. Koodi toimii laitoksen clubbi-Linuxeissa olevilla Java 11 koneilla.
 
-
 ## Dokumentaatio
+
+[Käyttöohje](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kayttoohje.md)
 
 [Vaatimusmäärittely](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/vaatimusmaarittely.md)
 
@@ -22,13 +24,13 @@ Tämä sovellus toimii ainoastaan Java versio 11. Koodi toimii laitoksen clubbi-
 
 ### Testaus
 
-Testit voidaan suorittaa seuraavalla kommennolla
+Testit voidaan suorittaa seuraavalla komennolla
 
 ```
 mvn test
 ```
 
-Testikattavuusraportti voidaan suorittaa seuraavalla kommennolla
+Testikattavuusraportti voidaan suorittaa seuraavalla komennolla
 
 ```
 mvn test jacoco:report
@@ -46,15 +48,21 @@ mvn package
 
 jar generoi hakemistoon _target_ ja se suoritetaan jar-tiedoston _pingpong-1.0-SNAPSHOT.jar_
 
-### Tiedostot jar tiedoston käynnistys
+### jar tiedoston käynnistäminen
 
-Tiedosto pingpong-1.0-SNAPSHOT.jar voidaan kaynistää kommennolla
+Tiedosto pingpong-1.0-SNAPSHOT.jar voidaan käynnistää komennolla
 
 ```
 java -jar pingpong-1.0-SNAPSHOT.jar
 ```
 
 ### JavaDoc
+
+JavaDoc voidaan suorittaa seuraavalla komennolla
+
+```
+mvn javadoc:javadoc
+```
 
 ### Checkstyle
 
@@ -86,13 +94,13 @@ Mavenin saa asennettua komennolla, tämä asentaa Java 15
 brew install maven
 ```
 
-Koska ohjelma toimii ainoastaan Java 11, niin sen voi asentaa seuraavalla kommennolla
+Koska ohjelma toimii ainoastaan Java 11, niin sen voi asentaa seuraavalla komennolla
 
 ```
 brew install java11
 ```
 
-Seuraavaksi osoitetaan Mavenille Java Versio 11. Mavenin versiolla 3.6.3_1 tämä tapahtuu muokkaamalla tiedostoa /usr/local/Cellar/maven/3.6.3_1/bin/mvn esim. nanolla kommennolla
+Seuraavaksi osoitetaan Mavenille Java Versio 11. Mavenin versiolla 3.6.3_1 tämä tapahtuu muokkaamalla tiedostoa /usr/local/Cellar/maven/3.6.3_1/bin/mvn esim. nanolla komennolla
 
 ```
 sudo nano /usr/local/Cellar/maven/3.6.3_1/bin/mvn

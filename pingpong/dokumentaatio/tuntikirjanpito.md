@@ -10,10 +10,13 @@
 | 15.4. | 6    | sovelluslogiikan paivitys |
 | 16.4. | 7    | sovelluslogiikan paivitys |
 | 18.4. | 7    | testauksia ja checkstyle käyttöön ottaminen ja erroreiden korjauksia |
-| 19.4. | 4    | arkkitehtuurikuvaus aloittaminen|
-| 20.4. | 3    | arkkitehtuurikuvaus aloittaminen|
-| 24.4. | 8    | score table ja file write and load|
-| 24.4. | 3    | testauksia|
-| 25.4. | 4    | score table ja file write and load|
-| 26.4. | 5    | arkkitehtuurikuvaus ja Readme päivitys, release tekeminen ja testauksia|
-| yht   | 70   | | 
+| 19.4. | 4    | arkkitehtuurikuvaus aloittaminen |
+| 20.4. | 3    | arkkitehtuurikuvaus päivitys |
+| 24.4. | 8    | score table ja file write and load |
+| 24.4. | 3    | testauksia |
+| 25.4. | 4    | lisää score table ja file write and load |
+| 26.4. | 5    | arkkitehtuurikuvaus ja Readme päivitys, release tekeminen ja testauksia |
+| 28.4. | 5    | uusi peli mode |
+| 28.4. | 3    | paddlet voivat liikkua horizontal suuntaan |
+| 29.4. | 5    | alustava javadoc, testauksia|
+| yht   | 83   | | 
