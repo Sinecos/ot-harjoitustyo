@@ -46,3 +46,7 @@ Kun peli päättyy, pelaaja siirtyy Score table sceneen. Pelaaja voi kirjoittaa 
 <img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kuvat/score.png" width="400">
 
 Pelaaja voi palata takaisin main menu nappia painamalla.
+
+## Kesken peli takaisin päävalikkoon
+
+Painamalla 'Esc' nappia pelaaja voi palata takaisin päävalikkoon.

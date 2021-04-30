@@ -28,7 +28,7 @@ Pelissä voi myös pelata toista pelaajaa (ei-tietokone) vastaan. Pelaaja 1 kont
 
 ✅- Pelin jälkein voittaja (ei tietokone) voi kirjoittaa oman nimensä HighScore listaan.
 
-- Pelaaja voi kesken peliä palata takaisin päävalikkoon.
+✅- Pelaaja voi kesken peliä palata takaisin päävalikkoon.
 
 ## Jatkokehitysideoita
 

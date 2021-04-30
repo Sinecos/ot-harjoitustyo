@@ -345,6 +345,8 @@ public class PongUi extends Application {
 
     public void update(GraphicsContext gc){
 
+        exitToMainMenu();
+
         graph.fillRect(Color.BLACK, 0, 0, w_Width, w_Height);
 
         //End Game Go to Score Table
@@ -480,6 +482,14 @@ public class PongUi extends Application {
         }
 
         playerScores.setText(status);
+    }
+
+    private void exitToMainMenu(){
+        gameScene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> {
+            if(key.getCode()== KeyCode.ESCAPE) {
+                backToMainMenu();
+            }
+        });
     }
 
     public static void main(String[] args) {
