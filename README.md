@@ -4,7 +4,7 @@ Sovellus on klassinen Pong peli, jossa pelaaja voi pelata tietokonetta tai toist
 
 ## Javan versiosta
 
-Tämä sovellus toimii ainoastaan Java versio 11. Koodi toimii laitoksen clubbi-Linuxeissa olevilla Java 11 koneilla.
+Tämä sovellus toimii ainoastaan Java versio 11. Koodi toimii laitoksen clubbi Gpu -Linuxeissa olevilla Java 11 koneilla.
 
 ## Dokumentaatio
 
