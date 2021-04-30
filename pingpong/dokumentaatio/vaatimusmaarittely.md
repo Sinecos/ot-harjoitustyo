@@ -18,7 +18,7 @@ Pelissä voi myös pelata toista pelaajaa (ei-tietokone) vastaan. Pelaaja 1 kont
 
 ✅-> NEW GAME (Player 2). Pelaaja pelaa toista pelajaa vastaan.
 
-✅-> HIGH SCORE. Pelaaja voi nähdä Top 5 parhaat pelaajat.
+✅-> HIGH SCORE. Pelaaja voi nähdä Top 10 parhaat pelaajat.
 
 ✅-> EXIT. Pelistä poistuminen.
 
