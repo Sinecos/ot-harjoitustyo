@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa ensin tiedosto [pingpong-1.0-SNAPSHOT.jar](https://github.com/Sinecos/ot-harjoitustyo/releases/tag/viikko5)
+Lataa ensin [pingpong-1.0-SNAPSHOT.jar](https://github.com/Sinecos/ot-harjoitustyo/releases/tag/Viikko6)
 
 ## Konfigurointi
 
