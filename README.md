@@ -18,6 +18,8 @@ Tämä sovellus toimii ainoastaan Java versio 11. Koodi toimii laitoksen clubbi-
 
 ## Releaset
 
+[Viikko 6](https://github.com/Sinecos/ot-harjoitustyo/releases/tag/Viikko6)
+
 [Viikko 5](https://github.com/Sinecos/ot-harjoitustyo/releases/tag/viikko5)
 
 ## Komentorivitoiminnot
