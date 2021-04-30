@@ -1,6 +1,8 @@
 target
 todos.txt 
 users.txt
+config.properties
+playerScore.txt
 .classpath
 .project
 .settings/
