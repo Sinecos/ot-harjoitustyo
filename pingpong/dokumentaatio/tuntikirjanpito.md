@@ -19,4 +19,5 @@
 | 28.4. | 5    | uusi peli mode |
 | 28.4. | 3    | paddlet voivat liikkua horizontal suuntaan |
 | 29.4. | 5    | alustava javadoc, testauksia|
-| yht   | 83   | | 
+| 30.4. | 3    | kayttöohjeen määritys|
+| yht   | 86   | | 
