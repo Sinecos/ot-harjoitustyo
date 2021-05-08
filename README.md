@@ -61,6 +61,14 @@ Tiedosto pingpong-1.0-SNAPSHOT.jar voidaan käynnistää komennolla
 java -jar pingpong-1.0-SNAPSHOT.jar
 ```
 
+### Compile
+
+Peliä voidaan myös compile ja avata komentoriviä käyttäen:
+
+```
+mvn compile exec:java -Dexec.mainClass=pongapp.App
+```
+
 ### JavaDoc
 
 JavaDoc voidaan suorittaa seuraavalla komennolla
