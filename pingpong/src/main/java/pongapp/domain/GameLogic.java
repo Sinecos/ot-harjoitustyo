@@ -1,5 +1,7 @@
 package pongapp.domain;
 
+import java.util.Random;
+
 public class GameLogic {
 
     /**
@@ -66,10 +68,17 @@ public class GameLogic {
                 && ball.getPos().y <= enemy.getPos().y + paddleHeight) ||
                 ((ball.getPos().x < player.getPos().x + paddleWidth) && ball.getPos().y >=
                         player.getPos().y && ball.getPos().y <= player.getPos().y + paddleHeight)) {
+
+            var speedY = -1;
+
+            speedY = (ball.getPos().y >= 0) ? 1 : -1;
+
             ball.getSpeed().y += 0.1f * Math.signum(ball.getSpeed().y);
             ball.getSpeed().x += 0.1f * Math.signum(ball.getSpeed().x);
             ball.getSpeed().x *= -1;
-            ball.getSpeed().y *= -1;
+            ball.getSpeed().y *= speedY;
+
+
         }
 
         return ball.getSpeed();
@@ -160,7 +169,7 @@ public class GameLogic {
             enemy.getPos().y = ball.getPos().y - paddleHeight / 2;
         } else {
             enemy.getPos().y = (ball.getPos().y > enemy.getPos().y + paddleHeight / 2) ?
-                    enemy.getPos().y += 1 : enemy.getPos().y - 1;
+                    enemy.getPos().y += 4 : enemy.getPos().y - 4;
         }
 
         return enemy.getPos();
@@ -225,6 +234,8 @@ public class GameLogic {
         if (((ball.getPos().x < player.getPos().x + paddleWidth) && ball.getPos().y >=
                 player.getPos().y && ball.getPos().y <= player.getPos().y + paddleHeight)) {
 
+            ball.setPosition(new Vector2(ball.getPos().x + 10, ball.getPos().y));
+
             return true;
         }
 
@@ -248,6 +259,8 @@ public class GameLogic {
 
         if (((ball.getPos().x + ball.getWidth() > enemy.getPos().x) && ball.getPos().y >= enemy.getPos().y
                 && ball.getPos().y <= enemy.getPos().y + paddleHeight)) {
+
+            ball.setPosition(new Vector2(ball.getPos().x - 10, ball.getPos().y));
 
             return true;
         }

@@ -36,7 +36,9 @@ public class GameLogicTest {
 
     @Test
     public void increaseBallSpeedWhileHittingPaddleOfEnemy() {
-        ball.setSpeed(new Vector2(1,1));
+        var speedY = (ball.getPos().y >= 0) ? -1 : 1;
+
+        ball.setSpeed(new Vector2(1,speedY));
         ball.setPosition(new Vector2(121, 10));
         Vector2 newSpeed = new Vector2(-1.1f,-1.1f);
 
@@ -45,10 +47,11 @@ public class GameLogicTest {
 
     @Test
     public void increaseBallSpeedWhileHittingPaddleOfPlayer() {
-        ball.setSpeed(new Vector2(-1,-1));
+        var speedY = (ball.getPos().y >= 0) ? 1 : -1;
+
+        ball.setSpeed(new Vector2(-1,speedY));
         ball.setPosition(new Vector2(5, 5));
         Vector2 newSpeed = new Vector2(1.1f,1.1f);
-
         assertTrue(gl.increaseBallSpeed(ball, enemy, player, paddleHeight, paddleWidth).equals(newSpeed));
     }
 
@@ -101,14 +104,14 @@ public class GameLogicTest {
     @Test
     public void enemyNewPositionPositive() {
         ball.setPosition(new Vector2((w_Width - w_Width / 4) + 1, enemy.getPos().y + paddleHeight / 2 + 1));
-        var testPosY = enemy.getPos().y + 1;
+        var testPosY = enemy.getPos().y + 4;
         assertTrue(gl.enemyNewPosition(ball, enemy, w_Width, paddleHeight).y == testPosY);
     }
 
     @Test
     public void enemyNewPositionNegative() {
         ball.setPosition(new Vector2((w_Width - w_Width / 4) + 1, enemy.getPos().y + paddleHeight / 2 - 1));
-        var testPosY = enemy.getPos().y - 1;
+        var testPosY = enemy.getPos().y - 4;
         assertTrue(gl.enemyNewPosition(ball, enemy, w_Width, paddleHeight).y == testPosY);
     }
 
@@ -168,6 +171,17 @@ public class GameLogicTest {
     }
 
     @Test
+    public void horBoostRightFalse(){
+        gl.horBoostStart = true;
+        gl.horBoostRight = true;
+        player.setPosition(new Vector2((w_Width / 2) - 199, player.getPos().y));
+        gl.giveHorizontalBoost(player, enemy, paddleWidth, w_Height, w_Width);
+
+        assertFalse(gl.horBoostRight);
+
+    }
+
+    @Test
     public void horBoostMoveToLeft(){
         gl.horBoostStart = true;
         gl.horBoostRight = false;
@@ -177,5 +191,4 @@ public class GameLogicTest {
         assertTrue(player.getPos().x > newPlayerPost);
 
     }
-
 }

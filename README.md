@@ -16,6 +16,9 @@ Tämä sovellus toimii ainoastaan Java versio 11. Koodi toimii laitoksen clubbi 
 
 [Työaikakirjanpito](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/tuntikirjanpito.md)
 
+[Testausdokumentti](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/testaus.md)
+
+
 ## Releaset
 
 [Viikko 6](https://github.com/Sinecos/ot-harjoitustyo/releases/tag/Viikko6)

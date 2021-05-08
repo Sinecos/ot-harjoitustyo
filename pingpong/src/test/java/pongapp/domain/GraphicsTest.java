@@ -49,7 +49,7 @@ public class GraphicsTest {
     }
 
     @Test
-    public void fillRectTestFail(){
+    public void fillRectTestFail() {
         assertFalse(graph.fillRect(null, a, b,c,d));
     }
 
@@ -59,8 +59,9 @@ public class GraphicsTest {
     }
 
     @Test
-    public void fillTextTestFail(){
-        assertFalse(graph.fillText(null, "testing", a, b));
+    public void fillTextTestFail() {
+        graph.gc = null;
+        assertFalse(graph.fillText(color, "null", a, b));
     }
 
     @Test

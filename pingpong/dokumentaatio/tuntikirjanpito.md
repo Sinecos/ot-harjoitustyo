@@ -20,4 +20,5 @@
 | 28.4. | 3    | paddlet voivat liikkua horizontal suuntaan |
 | 29.4. | 5    | alustava javadoc, testauksia|
 | 30.4. | 3    | kayttöohjeen määritys|
-| yht   | 86   | | 
+| 8.5.  | 4    | testausdokumenttin määritys ja muutama korjaus|
+| yht   | 90   | |
