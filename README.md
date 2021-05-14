@@ -8,15 +8,15 @@ Tämä sovellus toimii ainoastaan Java versio 11. Koodi toimii laitoksen clubbi 
 
 ## Dokumentaatio
 
-[Käyttöohje](https://github.com/Sinecos/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+[Käyttöohje](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kayttoohje.md)
 
-[Vaatimusmäärittely](https://github.com/Sinecos/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/vaatimusmaarittely.md)
 
-[Arkkitehtuurikuvaus](https://github.com/Sinecos/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+[Arkkitehtuurikuvaus](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/arkkitehtuuri.md)
 
-[Työaikakirjanpito](https://github.com/Sinecos/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+[Työaikakirjanpito](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/tuntikirjanpito.md)
 
-[Testausdokumentti](https://github.com/Sinecos/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
+[Testausdokumentti](https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/testaus.md)
 
 
 ## Releaset

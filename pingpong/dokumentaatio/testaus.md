@@ -32,7 +32,7 @@ Dao luokka on testattu Junitin TemporaryFolder sääntöjä käyttäen.
 
 Testauksien rivikattavuus on 97% ja haarautumakattavuus on 74%.
 
-<img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/test.png" width="800">
+<img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kuvat/test.png" width="800">
 
 Testaamatta jäi osa GameLogic haarautumakattavuuden osuudesta. 
 
