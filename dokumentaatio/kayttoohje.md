@@ -22,7 +22,7 @@ java -jar pingpong-1.0-SNAPSHOT.jar
 
 Pelaaja voi valita neljä vaihtoehtoa:
 
-<img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kuvat/menu.png" width="400">
+<img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/menu.png" width="400">
 
 1. New Game (Computer), pelaajaa pelaa AI vastaan. 
 2. New Game (Player2) Pelaaja pelaa toista pelaajaa vastaan.
@@ -43,7 +43,7 @@ Pelaaja 1 ohjaa hiirtä ja pelaaja 2 ohjaa näppäimistön ylös ja alas nappeja
 
 Kun peli päättyy, pelaaja siirtyy Score table sceneen. Pelaaja voi kirjoittaa nimensä ja painamalla add nappia, pelaajan nimi ja score tallentuu Score Tableen ja playerScore.txt tiedostoon.
 
-<img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/pingpong/dokumentaatio/kuvat/score.png" width="400">
+<img src="https://github.com/Sinecos/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/score.png" width="400">
 
 Pelaaja voi palata takaisin main menu nappia painamalla.
 
