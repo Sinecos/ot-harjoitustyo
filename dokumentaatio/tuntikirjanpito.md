@@ -21,4 +21,5 @@
 | 29.4. | 5    | alustava javadoc, testauksia|
 | 30.4. | 3    | kayttöohjeen määritys|
 | 8.5.  | 4    | testausdokumenttin määritys ja muutama korjaus|
-| yht   | 90   | |
+| 14.5. | 2    | viimeistely|
+| yht   | 92   | |
