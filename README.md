@@ -53,11 +53,11 @@ Jar file voidaan generoida komennolla:
 mvn package
 ```
 
-jar generoi hakemistoon *target* ja se suoritetaan jar-tiedoston *pingpong-1.0-SNAPSHOT.jar*
+generoitu tiedosto *pingpong-1.0-SNAPSHOT.jar* sijaitsee hakemistossa *target*
 
 #### jar tiedoston käynnistäminen
 
-Tiedosto pingpong-1.0-SNAPSHOT.jar voidaan käynnistää komennolla:
+Tiedosto *pingpong-1.0-SNAPSHOT.jar* voidaan käynnistää komennolla:
 
 ```
 java -jar pingpong-1.0-SNAPSHOT.jar
