@@ -27,9 +27,11 @@ Tämä sovellus toimii ainoastaan Java versio 11. Koodi toimii laitoksen clubbi 
 
 ## Komentorivitoiminnot
 
+Huomautus! Kaikki *mvn* komennot pitää ajaa pingpong päähakemistossa, missä tiedosto pom.xml sijaitsee.
+
 ### Testaus
 
-Testit voidaan suorittaa seuraavalla komennolla
+Testit voidaan suorittaa seuraavalla komennolla:
 
 ```
 mvn test
@@ -41,25 +43,27 @@ Testikattavuusraportti voidaan suorittaa seuraavalla komennolla
 mvn test jacoco:report
 ```
 
-Kattavuusraportin voi avata selaimella tiedoston _target/site/jacoco/index.html_
+Kattavuusraportin voi avata selaimella tiedoston *target/site/jacoco/index.html*
 
 ### Suoritettavan jarin generointi
 
-Jar file voidaan generoida komennolla
+Jar file voidaan generoida komennolla:
 
 ```
 mvn package
 ```
 
-jar generoi hakemistoon _target_ ja se suoritetaan jar-tiedoston _pingpong-1.0-SNAPSHOT.jar_
+jar generoi hakemistoon *target* ja se suoritetaan jar-tiedoston *pingpong-1.0-SNAPSHOT.jar*
 
 ### jar tiedoston käynnistäminen
 
-Tiedosto pingpong-1.0-SNAPSHOT.jar voidaan käynnistää komennolla
+Tiedosto pingpong-1.0-SNAPSHOT.jar voidaan käynnistää komennolla:
 
 ```
 java -jar pingpong-1.0-SNAPSHOT.jar
 ```
+
+tiedosto sijaitsee *target* kansiossa
 
 ### Compile
 
@@ -77,12 +81,14 @@ JavaDoc voidaan suorittaa seuraavalla komennolla
 mvn javadoc:javadoc
 ```
 
+JavaDoc gereneroima tiedot voidaan tarkistaa selaimella avaamalla tiedostoa *target/site/apidocs/index.html*
+
 ### Checkstyle
 
-Checkstyle voidaan suorittaa seuraavalla komennolla
+Checkstyle voidaan suorittaa seuraavalla komennolla:
 
 ```
 mvn jxr:jxr checkstyle:checkstyle
 ```
 
-Mahdolliset virhe ilmoitukset voidaan tarkistaa selaimella tiedostoa _target/site/checkstyle.html_
+Mahdolliset virhe ilmoitukset voidaan tarkistaa selaimella tiedostoa *target/site/checkstyle.html*
