@@ -37,7 +37,7 @@ Testit voidaan suorittaa seuraavalla komennolla:
 mvn test
 ```
 
-Testikattavuusraportti voidaan suorittaa seuraavalla komennolla
+Testikattavuusraportti voidaan suorittaa seuraavalla komennolla:
 
 ```
 mvn test jacoco:report
@@ -55,7 +55,7 @@ mvn package
 
 jar generoi hakemistoon *target* ja se suoritetaan jar-tiedoston *pingpong-1.0-SNAPSHOT.jar*
 
-### jar tiedoston käynnistäminen
+#### jar tiedoston käynnistäminen
 
 Tiedosto pingpong-1.0-SNAPSHOT.jar voidaan käynnistää komennolla:
 
